@@ -1,0 +1,282 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /** 1rem = 10px **/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/*Globales*/
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+h1, h2, h3, h4 {
+    font-family: 'PT Sans', sans-serif;
+}
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4{
+    font-size: 2.8rem;
+}
+img{
+    max-width: 100%;
+}
+
+/*Utilidades*/
+
+.centrar-texto {
+    text-align: center;
+}
+.no-margin{
+    margin: 0;
+}
+
+/*Header*/
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.site-header{
+    background-image: url(../img/banner.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60rem;
+}
+.site-header a{ /*Titulo hipervinculado*/
+    color: #ffffff;
+    text-decoration: none;
+}
+.site-header h1{
+    text-align: center;
+    font-weight: 400;
+}
+.site-header h1 span{
+    font-weight: 700;
+}
+.site-header p{
+    font-size: 2.2rem;
+}
+.texto-header{
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+    .texto-header{
+        margin-top: 15rem;
+        padding: 0;
+    }
+    .texto-header h2{
+        padding-bottom: 4rem;
+    }
+
+}
+
+/*Navegacion*/
+
+.navegacion a { /*Navegadores*/
+    text-align: center;
+    display: block;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline;
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type{
+        margin: 0;
+    }
+}
+
+/*Contenido principal HOME*/
+
+.contenido-principal{
+    display: flex;
+    flex-wrap: wrap;
+}
+.entrada-blog{
+    margin: 2rem 0;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+.entrada-blog:last-of-type{
+    border-bottom: none;
+}
+.blog,
+.cursos{
+    flex: 0 0 100%;
+}
+.cursos{
+    order: -1;
+}
+
+@media (min-width: 768px) {
+    .contenido-principal{
+        justify-content: space-between;
+    }
+    .blog{
+        flex-basis: 66.6%;
+        order: -1;
+    }
+    .cursos{
+        flex-basis: calc(33.3% - 4rem);
+    }
+}
+
+/*Botones*/
+
+.boton{
+    display: block;
+    text-align: center;
+    padding: 1rem 3rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 2rem 0;
+    flex: 0 0 100%;
+}
+@media (min-width: 768px) {
+    .boton{
+        display: inline;
+        flex: 0 0 auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
+}
+.boton-primario{
+    background-color: #000000;
+}
+.boton-secundario{
+    background-color: #784d3c;
+}
+
+/*Barra lateral*/
+
+.lista-cursos{
+    padding: 0;
+    list-style: none;
+}
+.curso{
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+.curso:last-of-type{
+    border-bottom: none;
+}
+
+/*Footer*/
+
+.site-footer{
+    background-color: #000000;
+    margin-top: 4rem;
+    padding: 3rem;
+}
+.site-footer p{
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+.site-footer p span{
+    font-weight: 700;
+}
+
+/* PAGINAS */
+/*Grid*/
+.grid{
+    text-align: justify;
+}
+@media (min-width: 768px) {
+    .grid{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columnas-4{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .columnas-6{
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8{
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+
+    /*OPERACION PARA SACAR PORCENTAJE DE BASIS*/
+    /*100/12 = 8.33333...*/  /*Es el 100% entre 12, que son las columnas que (recuerda) tiene el 100%*/
+    /*Este resultado se multiplica por la cantidad de columnas que queremos, en este caso 10*/
+    /*Por lo tanto: 8.33333... * 10 = 83.3% PARA EL CALC*/
+
+    .columnas-10{
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+}
+
+/*Contacto*/
+.formulario-contacto{
+    background-color: #ffffff;
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario-contacto{
+        margin-top: -10rem;
+    }
+}
+.formulario-contacto .campo{ /*aplicar el espacio disponible del formulario haciendolo flex*/ 
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea{
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 200px;;
+}
+.formulario-contacto .enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+
